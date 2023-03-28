@@ -1,15 +1,11 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {PayloadAction} from "@reduxjs/toolkit/dist/createAction";
-import {getCartFormLS} from "../../../Utils/getCartFormLs";
-import {calcTotalPrice} from "../../../Utils/TotalPrice";
+import {calcTotalPrice} from "../../../utils/TotalPrice";
 import {ICartSlice, InterfaceItem} from "./types";
 
-
-const {items, totalPrice}: any = getCartFormLS();
-
 const initialState: ICartSlice = {
-    totalPrice,
-    items
+    totalPrice: 0,
+    items: []
 };
 
 export const cartSlice = createSlice({
